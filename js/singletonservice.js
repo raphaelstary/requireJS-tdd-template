@@ -5,8 +5,6 @@ define('singletonservice', ['servicea'], function(ServiceA) {
 
     // interface hides object variables aka the module pattern
     return {
-        sayYourName: function() {
-            return serviceA.sayYourName();
-        }
+        sayYourName: serviceA.sayYourName.bind(serviceA)
     }
 });
